@@ -1,0 +1,98 @@
+{
+  "best_iteration": 45,
+  "calibrated": true,
+  "feature_columns": [
+    "amount",
+    "amount_received",
+    "signed_log_amount",
+    "signed_log_amount_received",
+    "amount_absolute_difference",
+    "amount_paid_to_received_ratio",
+    "amount_missing",
+    "amount_received_missing",
+    "same_bank",
+    "same_account",
+    "currency_mismatch",
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos",
+    "is_weekend",
+    "source_bank_hash",
+    "destination_bank_hash",
+    "source_account_hash",
+    "destination_account_hash",
+    "receiving_currency_hash",
+    "payment_currency_hash",
+    "payment_format_hash"
+  ],
+  "feature_set": "raw-baseline-v1",
+  "model_family": "lightgbm",
+  "quick_smoke_mode": false,
+  "source": "D:\\Projects\\Finance-2\\data\\raw\\ibm_aml_hi_small\\HI-Small_Trans.csv",
+  "split_plan": {
+    "maximum_event_time": "2022-09-18T16:18:00+00:00",
+    "minimum_event_time": "2022-09-01T00:00:00+00:00",
+    "splits": {
+      "test": {
+        "actual_ratio": 0.15006916623427513,
+        "negatives": 760542,
+        "positives": 1561,
+        "rows": 762103
+      },
+      "train": {
+        "actual_ratio": 0.6999620939498991,
+        "negatives": 3551793,
+        "positives": 2856,
+        "rows": 3554649
+      },
+      "validation": {
+        "actual_ratio": 0.1499687398158258,
+        "negatives": 760833,
+        "positives": 760,
+        "rows": 761593
+      }
+    },
+    "strategy": "chronological_timestamp_groups",
+    "target_ratios": {
+      "test": 0.15,
+      "train": 0.7,
+      "validation": 0.15
+    },
+    "test_starts_at": "2022-09-09T03:16:00+00:00",
+    "timestamp_groups": 15018,
+    "total_rows": 5078345,
+    "validation_starts_at": "2022-09-07T14:55:00+00:00"
+  },
+  "supplementary_models": [
+    "isolation_forest",
+    "logistic_baseline"
+  ],
+  "test_rows_scored": 762103,
+  "training": {
+    "algorithm": "lightgbm",
+    "categorical_features": [
+      "source_bank_hash",
+      "destination_bank_hash",
+      "source_account_hash",
+      "destination_account_hash",
+      "receiving_currency_hash",
+      "payment_currency_hash",
+      "payment_format_hash"
+    ],
+    "feature_set": "raw-baseline-v1",
+    "full_train_negatives": 3551793,
+    "full_train_positives": 2856,
+    "full_train_rows": 3554649,
+    "inverse_probability_weighting": true,
+    "negative_to_positive_ratio": 100.0,
+    "sampled_train_negatives": 285600,
+    "sampled_train_positives": 2856,
+    "sampled_train_rows": 288456,
+    "seed": 20261010,
+    "test_rows": 762103,
+    "train_only_negative_undersampling": true,
+    "validation_rows": 761593
+  },
+  "validation_rows_scored": 761593
+}

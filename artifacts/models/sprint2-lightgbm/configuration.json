@@ -1,0 +1,180 @@
+{
+  "effective": {
+    "categorical_features": [
+      "source_bank_hash",
+      "destination_bank_hash",
+      "source_account_hash",
+      "destination_account_hash",
+      "receiving_currency_hash",
+      "payment_currency_hash",
+      "payment_format_hash"
+    ],
+    "chunk_size": 100000,
+    "feature_columns": [
+      "amount",
+      "amount_received",
+      "signed_log_amount",
+      "signed_log_amount_received",
+      "amount_absolute_difference",
+      "amount_paid_to_received_ratio",
+      "amount_missing",
+      "amount_received_missing",
+      "same_bank",
+      "same_account",
+      "currency_mismatch",
+      "hour_sin",
+      "hour_cos",
+      "weekday_sin",
+      "weekday_cos",
+      "is_weekend",
+      "source_bank_hash",
+      "destination_bank_hash",
+      "source_account_hash",
+      "destination_account_hash",
+      "receiving_currency_hash",
+      "payment_currency_hash",
+      "payment_format_hash"
+    ],
+    "inverse_probability_weighting": true,
+    "minimum_positives": {
+      "test": 50,
+      "train": 50,
+      "validation": 50
+    },
+    "negative_to_positive_ratio": 100.0,
+    "quick_smoke_mode": false,
+    "seed": 20261010,
+    "split_ratios": {
+      "test": 0.15,
+      "train": 0.7,
+      "validation": 0.15
+    },
+    "xgboost_crosscheck_enabled": false
+  },
+  "schema_version": 1,
+  "source_configuration": {
+    "calibration": {
+      "fit_split": "validation",
+      "method": "platt"
+    },
+    "categorical_features": [
+      "source_bank_hash",
+      "destination_bank_hash",
+      "source_account_hash",
+      "destination_account_hash",
+      "receiving_currency_hash",
+      "payment_currency_hash",
+      "payment_format_hash"
+    ],
+    "dataset_id": "ibm_aml_hi_small",
+    "evaluation": {
+      "calibration_bins": 10,
+      "capacity_per_hour": 25,
+      "report_first_seen_cases": true,
+      "threshold_metric": "f1"
+    },
+    "feature_columns": [
+      "amount",
+      "amount_received",
+      "signed_log_amount",
+      "signed_log_amount_received",
+      "amount_absolute_difference",
+      "amount_paid_to_received_ratio",
+      "amount_missing",
+      "amount_received_missing",
+      "same_bank",
+      "same_account",
+      "currency_mismatch",
+      "hour_sin",
+      "hour_cos",
+      "weekday_sin",
+      "weekday_cos",
+      "is_weekend",
+      "source_bank_hash",
+      "destination_bank_hash",
+      "source_account_hash",
+      "destination_account_hash",
+      "receiving_currency_hash",
+      "payment_currency_hash",
+      "payment_format_hash"
+    ],
+    "isolation_forest": {
+      "enabled": true,
+      "jobs": 4,
+      "maximum_samples": 8192,
+      "number_of_estimators": 200,
+      "seed": 20261010
+    },
+    "lightgbm": {
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "deterministic": true,
+      "early_stopping_rounds": 100,
+      "feature_fraction": 0.8,
+      "force_row_wise": true,
+      "lambda_l1": 0.0,
+      "lambda_l2": 1.0,
+      "learning_rate": 0.05,
+      "log_evaluation_period": 0,
+      "max_bin": 63,
+      "metric": [
+        "average_precision",
+        "auc"
+      ],
+      "min_data_in_leaf": 200,
+      "num_boost_round": 2000,
+      "num_leaves": 31,
+      "num_threads": 4,
+      "objective": "binary",
+      "seed": 20261010
+    },
+    "logistic_baseline": {
+      "class_weight": "balanced",
+      "enabled": true
+    },
+    "minimum_positives": {
+      "test": 50,
+      "train": 50,
+      "validation": 50
+    },
+    "model_selection": {
+      "primary": "lightgbm",
+      "rationale": "CPU-efficient gradient boosting for rare-event tabular data with native TreeSHAP support; logistic regression is the supervised baseline and Isolation Forest is a complementary anomaly signal."
+    },
+    "output": {
+      "directory": "artifacts/models/sprint2-lightgbm"
+    },
+    "raw": {
+      "categorical_encoding": "stable_hash_bucket_index",
+      "chunk_size": 100000,
+      "feature_contract": "raw-baseline-v1",
+      "hash_buckets": 4096,
+      "input": "data/raw/ibm_aml_hi_small/HI-Small_Trans.csv",
+      "pattern_memberships": "data/interim/amlworld_pattern_memberships.parquet"
+    },
+    "sampling": {
+      "inverse_probability_weighting": true,
+      "negative_to_positive_ratio": 100,
+      "seed": 20261010
+    },
+    "schema_version": 1,
+    "split_ratios": {
+      "test": 0.15,
+      "train": 0.7,
+      "validation": 0.15
+    },
+    "xgboost_crosscheck": {
+      "enabled": false,
+      "parameters": {
+        "colsample_bytree": 0.8,
+        "early_stopping_rounds": 75,
+        "eta": 0.05,
+        "max_depth": 6,
+        "nthread": 4,
+        "num_boost_round": 1000,
+        "seed": 20261010,
+        "subsample": 0.8
+      }
+    }
+  }
+}

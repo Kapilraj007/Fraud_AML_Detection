@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "study_id": "ski027-capacity-aware-aml-triage",
+  "research_question": "Under temporal and AML-typology shift, does reliability-gated case-level context improve laundering-case recovery per analyst hour over score-only and generic feature-attribution review at a fixed queue capacity?",
+  "unit_of_randomization": "case_id, falling back to event_id when no labelled laundering case exists",
+  "evaluation_split": "chronologically latest held-out test window",
+  "queue_policy": {
+    "capacity_per_hour": 25,
+    "tie_breaker": "event_id ascending",
+    "ranking_label_blind": true
+  },
+  "arms": [
+    "data_only",
+    "score_only",
+    "generic_explanation",
+    "reliability_gated_case_context"
+  ],
+  "primary_endpoint": "case_recall_at_fixed_capacity",
+  "secondary_endpoints": [
+    "alert_precision",
+    "alert_recall",
+    "false_escalations",
+    "time_to_first_detection_hours",
+    "positive_backlog_age_hours",
+    "laundering_value_per_analyst_hour"
+  ],
+  "shift_slices": [
+    "chronological_holdout",
+    "typology",
+    "transaction_format",
+    "currency"
+  ],
+  "guardrails": [
+    "No label, case ID, typology, investigator outcome, or post-event field may enter a model feature.",
+    "All rolling features use the half-open historical interval [event_time - window, event_time).",
+    "Preprocessing statistics and category vocabularies are fitted on train only.",
+    "Reviewer-facing queue files are physically separated from evaluation labels.",
+    "Study-arm assignment is deterministic and case-consistent."
+  ],
+  "sprint_1_status": "harness and leakage boundaries implemented; model explanations and human-subject evaluation are intentionally deferred"
+}

@@ -1,0 +1,58 @@
+{
+  "checks": {
+    "case_queue": {
+      "capacity_per_hour": 25,
+      "ground_truth_isolated": true,
+      "input_rows": 23361,
+      "reviewer_alert_rows": 25
+    },
+    "feature_store": {
+      "maximum_event_time": "2022-09-01T00:09:00+00:00",
+      "minimum_event_time": "2022-09-01T00:00:00+00:00",
+      "parquet_files": 1,
+      "rows": 100000
+    },
+    "model_matrix": {
+      "feature_count": 98,
+      "fit_split": "train",
+      "test_rows": 23361,
+      "train_rows": 65693,
+      "validation_rows": 10946
+    },
+    "raw": {
+      "dataset_id": "ibm_aml_hi_small",
+      "manifest": "D:\\Projects\\Finance-2\\data\\raw\\ibm_aml_hi_small\\manifest.json",
+      "verified_files": {
+        "HI-Small_Patterns.txt": "2c546b5ce6009e73851f0139af053cf845f08bf92f3bc82fe1eb937dec2ef39b",
+        "HI-Small_Trans.csv": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040",
+        "HI-Small_accounts.csv": "786808526e33cfc441212dd6fccda7edfc24172149bed59c6ef59b186836b014"
+      }
+    },
+    "reports": {
+      "data_dictionary_entries": 54,
+      "eda_rows": 100000,
+      "required_eda_artifacts": 10
+    },
+    "splits": {
+      "test": {
+        "maximum_event_time": "2022-09-01T00:09:00+00:00",
+        "minimum_event_time": "2022-09-01T00:07:00+00:00",
+        "rows": 23361
+      },
+      "train": {
+        "maximum_event_time": "2022-09-01T00:05:00+00:00",
+        "minimum_event_time": "2022-09-01T00:00:00+00:00",
+        "rows": 65693
+      },
+      "validation": {
+        "maximum_event_time": "2022-09-01T00:06:00+00:00",
+        "minimum_event_time": "2022-09-01T00:06:00+00:00",
+        "rows": 10946
+      }
+    }
+  },
+  "run_name": "dev-100000",
+  "schema_version": 1,
+  "status": "pass",
+  "verified_at_utc": "2026-10-09T12:06:14.253442+00:00"
+}

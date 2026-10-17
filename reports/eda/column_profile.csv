@@ -1,0 +1,12 @@
+column,dtype,null_count,null_rate
+Timestamp,str,0,0.0
+From Bank,int64,0,0.0
+Account,str,0,0.0
+To Bank,int64,0,0.0
+Account.1,str,0,0.0
+Amount Received,float64,0,0.0
+Receiving Currency,str,0,0.0
+Amount Paid,float64,0,0.0
+Payment Currency,str,0,0.0
+Payment Format,str,0,0.0
+Is Laundering,int64,0,0.0

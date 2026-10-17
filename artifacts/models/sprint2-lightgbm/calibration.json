@@ -1,0 +1,8 @@
+{
+  "fitted_rows": 761593,
+  "intercept": 2.1762358297647117,
+  "kind": "platt-sigmoid",
+  "positive_rows": 760,
+  "slope": 1.2901136789145675,
+  "version": 1
+}

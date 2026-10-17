@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-13T13:30:46.3925081+00:00",
+  "status": "pass",
+  "sprint1_gate": {
+    "implementation_acceptance": "pass",
+    "independent_verifier": "pass",
+    "development_matrix_model_eligible": false,
+    "reason": "dev-100000 chronological test split contains zero positives"
+  },
+  "model": {
+    "bundle_id": "sprint2-lightgbm-v1",
+    "manifest_sha256": "7a65f8f2028385f5f95989a2dbaba51387e8f594da9465f0cf34df7578a69230",
+    "primary": "lightgbm",
+    "best_iteration": 45,
+    "calibrated": true,
+    "validation_rows_scored": 761593,
+    "test_rows_scored": 762103,
+    "test_positives": 1561,
+    "test_pr_auc": 0.1398035561985327,
+    "test_roc_auc": 0.9694538566970357,
+    "test_f1": 0.19540623928693865,
+    "test_case_recall_at_25_per_hour": 0.7679558011049724,
+    "test_first_seen_case_recall_at_25_per_hour": 0.9012345679012346,
+    "bundle_verification": "pass",
+    "runtime_scoring_smoke": "pass"
+  },
+  "backend": {
+    "tests": 76,
+    "subtests": 5,
+    "test_status": "pass",
+    "openapi_paths": 23,
+    "compile_status": "pass",
+    "alembic_upgrade_clean_database": "pass",
+    "admin_seed_cli": "pass",
+    "model_registration_and_activation_cli": "pass",
+    "uvicorn_liveness_http": 200,
+    "uvicorn_readiness_http": 200,
+    "readiness_components": {
+      "database": "ready",
+      "model": "ready",
+      "active_model_registry": "ready"
+    }
+  },
+  "database": {
+    "production_target": "Neon PostgreSQL pooled asyncpg endpoint with TLS",
+    "docker_required": false,
+    "migration_dialect_smoke": "SQLite",
+    "live_neon_migration": "not_run_no_credentials_in_workspace"
+  }
+}

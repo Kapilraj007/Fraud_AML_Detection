@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "datasets": {
+    "ibm_aml_hi_small": {
+      "name": "IBM AMLworld HI-Small",
+      "description": "Synthetic bank transactions with laundering labels and typology ground truth; primary Sprint 1 benchmark.",
+      "version": "HI-Small (SHA-256-pinned Kaggle artifacts)",
+      "provider": "IBM / Kaggle distribution by ealtman2019",
+      "landing_page": "https://github.com/IBM/AML-Data",
+      "distribution_page": "https://www.kaggle.com/datasets/ealtman2019/ibm-transactions-for-anti-money-laundering-aml",
+      "access_type": "kaggle_dataset",
+      "credentials_required": false,
+      "license": {
+        "id": "CDLA-Sharing-1.0",
+        "url": "https://cdla.dev/sharing-1-0/",
+        "acknowledgement_required": true
+      },
+      "files": [
+        {
+          "name": "HI-Small_Trans.csv",
+          "role": "transactions",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml/HI-Small_Trans.csv",
+          "archive_member": "HI-Small_Trans.csv",
+          "sha256": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040"
+        },
+        {
+          "name": "HI-Small_Patterns.txt",
+          "role": "laundering-pattern-ground-truth",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml/HI-Small_Patterns.txt",
+          "archive_member": "HI-Small_Patterns.txt",
+          "sha256": "2c546b5ce6009e73851f0139af053cf845f08bf92f3bc82fe1eb937dec2ef39b",
+          "integrity_note": "Current Kaggle bytes include one trailing LF. Removing only that final byte yields the previously published digest 7636c1d712168139ba0ff90f1b45aac9888d0ad46387084560886f204c03d6e6."
+        },
+        {
+          "name": "HI-Small_accounts.csv",
+          "role": "account-entity-reference",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml/HI-Small_accounts.csv",
+          "archive_member": "HI-Small_accounts.csv",
+          "sha256": null,
+          "integrity_note": "The upstream distribution does not publish a trusted digest. The acquisition manifest pins the observed SHA-256 after first download."
+        }
+      ]
+    },
+    "paysim": {
+      "name": "PaySim1 Synthetic Financial Dataset",
+      "description": "Optional mobile-money fraud stress test; it is not an AML benchmark.",
+      "version": "PaySim1 Kaggle 1/4-scale snapshot (6,362,620 rows)",
+      "provider": "PaySim authors / Kaggle distribution by ealaxi",
+      "landing_page": "https://github.com/EdgarLopezPhD/PaySim",
+      "distribution_page": "https://www.kaggle.com/datasets/ealaxi/paysim1",
+      "access_type": "kaggle_dataset",
+      "credentials_required": false,
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "acknowledgement_required": true
+      },
+      "files": [
+        {
+          "name": "PS_20174392719_1491204439457_log.csv",
+          "role": "fraud-transactions",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/ealaxi/paysim1/PS_20174392719_1491204439457_log.csv",
+          "archive_member": "PS_20174392719_1491204439457_log.csv",
+          "sha256": null,
+          "integrity_note": "The acquisition manifest pins the observed SHA-256; promote it into this registry only after an independent source check."
+        }
+      ]
+    },
+    "ieee_cis": {
+      "name": "IEEE-CIS Fraud Detection",
+      "description": "Optional restricted fraud benchmark. Access and use remain subject to the Kaggle competition rules.",
+      "version": "2019 competition files",
+      "provider": "IEEE Computational Intelligence Society / Kaggle",
+      "landing_page": "https://www.kaggle.com/competitions/ieee-fraud-detection/data",
+      "distribution_page": "https://www.kaggle.com/competitions/ieee-fraud-detection/data",
+      "rules_page": "https://www.kaggle.com/competitions/ieee-fraud-detection/rules",
+      "access_type": "kaggle_competition",
+      "credentials_required": true,
+      "license": {
+        "id": "Kaggle-Competition-Rules",
+        "url": "https://www.kaggle.com/competitions/ieee-fraud-detection/rules",
+        "acknowledgement_required": true
+      },
+      "files": [
+        {
+          "name": "train_transaction.csv",
+          "role": "fraud-training-transactions",
+          "url": "https://www.kaggle.com/api/v1/competitions/data/download/ieee-fraud-detection/train_transaction.csv",
+          "archive_member": "train_transaction.csv",
+          "sha256": null
+        },
+        {
+          "name": "train_identity.csv",
+          "role": "fraud-training-identities",
+          "url": "https://www.kaggle.com/api/v1/competitions/data/download/ieee-fraud-detection/train_identity.csv",
+          "archive_member": "train_identity.csv",
+          "sha256": null
+        }
+      ]
+    }
+  }
+}

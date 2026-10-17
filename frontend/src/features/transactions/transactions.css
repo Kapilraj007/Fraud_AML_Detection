@@ -1,0 +1,151 @@
+.transaction-filter-panel .filters-header {
+  border-bottom: 0;
+  padding-bottom: 4px;
+}
+
+.transaction-filters {
+  padding-top: 10px;
+}
+
+.transaction-filters .form-field {
+  min-width: 215px;
+}
+
+.transaction-filter-panel > .field-error {
+  margin: -7px 20px 16px;
+}
+
+.transaction-table-header {
+  align-items: center;
+}
+
+.table-tools {
+  display: flex;
+  flex: 0 1 430px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.table-search {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+}
+
+.table-search > svg {
+  position: absolute;
+  left: 11px;
+  z-index: 1;
+  color: var(--ink-500);
+  pointer-events: none;
+}
+
+.table-search input {
+  min-height: 38px;
+  padding-left: 34px;
+}
+
+.page-size-control {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink-500);
+  font-size: 10.5px;
+}
+
+.page-size-control select {
+  width: auto;
+  min-height: 38px;
+  padding-block: 6px;
+}
+
+.transaction-data-table {
+  min-width: 920px;
+}
+
+.transaction-data-table th:nth-child(5),
+.transaction-data-table td:nth-child(5) {
+  text-align: right;
+}
+
+.event-id {
+  display: block;
+  max-width: 190px;
+  overflow: hidden;
+  color: var(--ink-700);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-route {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  white-space: nowrap;
+}
+
+.account-route > span:nth-child(2) {
+  color: var(--ink-500);
+}
+
+.type-chip {
+  display: inline-flex;
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink-600);
+  background: var(--surface-soft);
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.search-empty-state {
+  padding-bottom: 18px;
+  text-align: center;
+}
+
+.search-empty-state .page-state {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 930px) {
+  .transaction-table-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .table-tools {
+    width: 100%;
+    flex-basis: auto;
+    justify-content: stretch;
+  }
+}
+
+@media (max-width: 720px) {
+  .transaction-filters .form-field {
+    min-width: 0;
+  }
+
+  .transaction-filter-panel > .field-error {
+    margin-inline: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .table-tools {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .page-size-control {
+    justify-content: flex-end;
+  }
+}

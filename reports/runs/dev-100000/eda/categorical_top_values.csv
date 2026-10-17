@@ -1,0 +1,25 @@
+column,value,count,share
+currency,US Dollar,38261,0.38261
+currency,Euro,22782,0.22782
+currency,Swiss Franc,4462,0.04462
+currency,Yuan,4187,0.04187
+currency,Rupee,3805,0.03805
+currency,Shekel,3727,0.03727
+currency,UK Pound,3366,0.03366
+currency,Yen,3187,0.03187
+currency,Ruble,3096,0.03096
+currency,Bitcoin,2715,0.02715
+currency,Canadian Dollar,2685,0.02685
+currency,Australian Dollar,2609,0.02609
+currency,Mexican Peso,2164,0.02164
+currency,Saudi Riyal,1607,0.01607
+currency,Brazil Real,1347,0.01347
+label,0,99993,0.99993
+label,1,7,7e-05
+transaction_type,Reinvestment,70448,0.70448
+transaction_type,Cheque,9620,0.0962
+transaction_type,Credit Card,8861,0.08861
+transaction_type,ACH,4606,0.04606
+transaction_type,Bitcoin,2716,0.02716
+transaction_type,Cash,2624,0.02624
+transaction_type,Wire,1125,0.01125

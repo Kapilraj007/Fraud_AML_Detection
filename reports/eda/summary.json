@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-09T11:49:39+00:00",
+  "input": "D:\\Projects\\Finance-2\\data\\raw\\ibm_aml_hi_small\\HI-Small_Trans.csv",
+  "input_manifest": {
+    "dataset_id": "ibm_aml_hi_small",
+    "dataset_name": "IBM AMLworld HI-Small",
+    "dataset_version": "HI-Small (SHA-256-pinned Kaggle artifacts)",
+    "files": [
+      {
+        "bytes": 34053187,
+        "dataset_version": "HI-Small (SHA-256-pinned Kaggle artifacts)",
+        "expected_sha256": null,
+        "fetched_at": "2026-10-09T11:41:58Z",
+        "license": "CDLA-Sharing-1.0",
+        "license_acknowledged": true,
+        "license_url": "https://cdla.dev/sharing-1-0/",
+        "name": "HI-Small_accounts.csv",
+        "role": "account-entity-reference",
+        "sha256": "786808526e33cfc441212dd6fccda7edfc24172149bed59c6ef59b186836b014",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml/HI-Small_accounts.csv"
+      },
+      {
+        "bytes": 323844,
+        "dataset_version": "HI-Small (SHA-256-pinned Kaggle artifacts)",
+        "expected_sha256": "2c546b5ce6009e73851f0139af053cf845f08bf92f3bc82fe1eb937dec2ef39b",
+        "fetched_at": "2026-10-09T04:37:06Z",
+        "license": "CDLA-Sharing-1.0",
+        "license_acknowledged": true,
+        "license_url": "https://cdla.dev/sharing-1-0/",
+        "name": "HI-Small_Patterns.txt",
+        "role": "laundering-pattern-ground-truth",
+        "sha256": "2c546b5ce6009e73851f0139af053cf845f08bf92f3bc82fe1eb937dec2ef39b",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml/HI-Small_Patterns.txt"
+      },
+      {
+        "bytes": 475664283,
+        "dataset_version": "HI-Small (SHA-256-pinned Kaggle artifacts)",
+        "expected_sha256": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040",
+        "fetched_at": "2026-10-08T12:05:56Z",
+        "license": "CDLA-Sharing-1.0",
+        "license_acknowledged": true,
+        "license_url": "https://cdla.dev/sharing-1-0/",
+        "name": "HI-Small_Trans.csv",
+        "role": "transactions",
+        "sha256": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/ealtman2019/ibm-transactions-for-anti-money-laundering-aml/HI-Small_Trans.csv"
+      }
+    ],
+    "landing_page": "https://github.com/IBM/AML-Data",
+    "license": {
+      "acknowledgement_required": true,
+      "id": "CDLA-Sharing-1.0",
+      "url": "https://cdla.dev/sharing-1-0/"
+    },
+    "provider": "IBM / Kaggle distribution by ealtman2019",
+    "schema_version": 1,
+    "updated_at": "2026-10-09T11:42:10Z"
+  },
+  "profile_scope": {
+    "rows": 5078345,
+    "batches": 26,
+    "batch_size": 200000,
+    "max_rows": null,
+    "is_bounded_sample": false
+  },
+  "resolved_fields": {
+    "timestamp": "Timestamp",
+    "amount": "Amount Paid",
+    "label": "Is Laundering",
+    "type": "Payment Format",
+    "currency": "Payment Currency",
+    "receiving_currency": "Receiving Currency",
+    "source_bank": "From Bank",
+    "destination_bank": "To Bank",
+    "source": "Account",
+    "destination": "Account.1"
+  },
+  "time": {
+    "minimum_utc": "2022-09-01T00:00:00+00:00",
+    "maximum_utc": "2022-09-18T16:18:00+00:00",
+    "input_order_regressions": 2418736
+  },
+  "class_balance": {
+    "counts": {
+      "0": 5073168,
+      "1": 5177
+    },
+    "positive_count": 5177,
+    "positive_rate": 0.0010194266045335635
+  },
+  "amount": {
+    "parse_failures": 0,
+    "negative_count": 0,
+    "zero_count": 0,
+    "sample_size_for_quantiles": 50000,
+    "sample_quantiles": {
+      "p00": 1e-06,
+      "p25": 180.9925,
+      "p50": 1418.105,
+      "p75": 12311.085,
+      "p90": 132457.12699999998,
+      "p99": 11348804.243400024,
+      "p100": 626035501453.45
+    }
+  },
+  "entities": {
+    "source_distinct_hash64": 496995,
+    "destination_distinct_hash64": 420636,
+    "note": "Counts use distinct deterministic 64-bit pandas hashes to bound memory."
+  },
+  "pattern_ground_truth": {
+    "available": true,
+    "path": "D:\\Projects\\Finance-2\\data\\raw\\ibm_aml_hi_small\\HI-Small_Patterns.txt",
+    "nonblank_lines": 3949,
+    "case_count": 370,
+    "transaction_annotations": 3209,
+    "typology_count": 8,
+    "malformed_or_orphan_lines": 0
+  },
+  "quality": {
+    "timestamp_parse_failures": 0,
+    "input_order_timestamp_regressions": 2418736,
+    "amount_parse_failures": 0,
+    "negative_amounts": 0,
+    "non_binary_labels": 0,
+    "missing_source_entities": 0,
+    "missing_destination_entities": 0
+  },
+  "interpretation_guardrails": [
+    "AMLworld is synthetic; prevalence is not a production base-rate estimate.",
+    "Pattern typology and label fields are evaluation-only and must not enter predictors.",
+    "Timestamp regressions in the raw file require chronological sorting before causal features.",
+    "A max-row run is a development sample, not the final descriptive analysis."
+  ]
+}

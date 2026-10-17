@@ -1,0 +1,251 @@
+{
+  "case_evaluation": {
+    "ground_truth_used_after_scoring_only": true,
+    "membership_rows": 3209,
+    "source": "D:\\Projects\\Finance-2\\data\\interim\\amlworld_pattern_memberships.parquet"
+  },
+  "model_selection": {
+    "basis": "CPU-efficient gradient boosting for imbalanced tabular data, with native TreeSHAP support and deterministic training",
+    "isolation_forest_trained": true,
+    "logistic_baseline_trained": true,
+    "selected": "lightgbm",
+    "xgboost_crosscheck_trained": false
+  },
+  "primary_model": "lightgbm",
+  "schema_version": 1,
+  "test": {
+    "average_precision": 0.1398035561985327,
+    "brier_score": 0.001887528625213243,
+    "calibration_bins": [
+      {
+        "lower": 0.0,
+        "mean_probability": 0.0012617904239774097,
+        "observed_rate": 0.0016980784901295901,
+        "rows": 760860,
+        "upper": 0.1
+      },
+      {
+        "lower": 0.1,
+        "mean_probability": 0.1368467853848134,
+        "observed_rate": 0.17381228273464658,
+        "rows": 863,
+        "upper": 0.2
+      },
+      {
+        "lower": 0.2,
+        "mean_probability": 0.23822260077116206,
+        "observed_rate": 0.16748768472906403,
+        "rows": 203,
+        "upper": 0.3
+      },
+      {
+        "lower": 0.3,
+        "mean_probability": 0.3443186108248479,
+        "observed_rate": 0.2777777777777778,
+        "rows": 72,
+        "upper": 0.4
+      },
+      {
+        "lower": 0.4,
+        "mean_probability": 0.4470651769292108,
+        "observed_rate": 0.5116279069767442,
+        "rows": 43,
+        "upper": 0.5
+      },
+      {
+        "lower": 0.5,
+        "mean_probability": 0.5432965024660896,
+        "observed_rate": 0.35714285714285715,
+        "rows": 14,
+        "upper": 0.6
+      },
+      {
+        "lower": 0.6,
+        "mean_probability": 0.6370484224894704,
+        "observed_rate": 0.5,
+        "rows": 16,
+        "upper": 0.7
+      },
+      {
+        "lower": 0.7,
+        "mean_probability": 0.7509025233185846,
+        "observed_rate": 0.95,
+        "rows": 20,
+        "upper": 0.8
+      },
+      {
+        "lower": 0.8,
+        "mean_probability": 0.8538803669096633,
+        "observed_rate": 0.875,
+        "rows": 8,
+        "upper": 0.9
+      },
+      {
+        "lower": 0.9,
+        "mean_probability": 0.9208115109097796,
+        "observed_rate": 1.0,
+        "rows": 4,
+        "upper": 1.0
+      }
+    ],
+    "capacity": {
+      "active_hours": 190,
+      "alert_precision": 0.3466424682395644,
+      "alert_recall": 0.4894298526585522,
+      "alerts_reviewed": 2204,
+      "capacity_per_hour": 25,
+      "case_recall": 0.7679558011049724,
+      "detected_cases": 139,
+      "detected_first_seen_cases": 73,
+      "false_escalations": 1440,
+      "first_seen_case_recall": 0.9012345679012346,
+      "first_seen_test_cases": 81,
+      "laundering_value_per_active_hour": 8616754.090894736,
+      "recovered_laundering_value": 1637183277.27,
+      "reviewed_per_active_hour": 11.6,
+      "test_cases": 181,
+      "true_positive_alerts": 764
+    },
+    "case_mapping": {
+      "matched_positive_fingerprints": 1219,
+      "positive_rows": 1561
+    },
+    "expected_calibration_error": 0.0005183659871467526,
+    "f1": 0.19540623928693865,
+    "false_negatives": 1276,
+    "false_positives": 1071,
+    "full_split_scored": true,
+    "positive_rate": 0.002048279563261134,
+    "positives": 1561,
+    "pr_auc": 0.1398035561985327,
+    "precision": 0.21017699115044247,
+    "recall": 0.1825752722613709,
+    "roc_auc": 0.9694538566970357,
+    "rows": 762103,
+    "threshold": 0.09492731170067917,
+    "true_negatives": 759471,
+    "true_positives": 285
+  },
+  "threshold_selection": {
+    "beta": 1.0,
+    "f_beta": 0.1511627906976744,
+    "metric": "f1",
+    "precision": 0.16883116883116883,
+    "recall": 0.1368421052631579,
+    "split": "validation",
+    "threshold": 0.09492731170067917
+  },
+  "validation": {
+    "average_precision": 0.09007935579024015,
+    "brier_score": 0.0009482474924698696,
+    "calibration_bins": [
+      {
+        "lower": 0.0,
+        "mean_probability": 0.0008526896545360022,
+        "observed_rate": 0.0008751182592242195,
+        "rows": 761040,
+        "upper": 0.1
+      },
+      {
+        "lower": 0.1,
+        "mean_probability": 0.13528232970313717,
+        "observed_rate": 0.10282776349614396,
+        "rows": 389,
+        "upper": 0.2
+      },
+      {
+        "lower": 0.2,
+        "mean_probability": 0.242803769745006,
+        "observed_rate": 0.12195121951219512,
+        "rows": 82,
+        "upper": 0.3
+      },
+      {
+        "lower": 0.3,
+        "mean_probability": 0.3393974216360528,
+        "observed_rate": 0.28125,
+        "rows": 32,
+        "upper": 0.4
+      },
+      {
+        "lower": 0.4,
+        "mean_probability": 0.44680569322995395,
+        "observed_rate": 0.6956521739130435,
+        "rows": 23,
+        "upper": 0.5
+      },
+      {
+        "lower": 0.5,
+        "mean_probability": 0.5440286251555416,
+        "observed_rate": 0.4,
+        "rows": 10,
+        "upper": 0.6
+      },
+      {
+        "lower": 0.6,
+        "mean_probability": 0.6417145929338294,
+        "observed_rate": 0.8888888888888888,
+        "rows": 9,
+        "upper": 0.7
+      },
+      {
+        "lower": 0.7,
+        "mean_probability": 0.7497471608165391,
+        "observed_rate": 1.0,
+        "rows": 5,
+        "upper": 0.8
+      },
+      {
+        "lower": 0.8,
+        "mean_probability": 0.8108760530334328,
+        "observed_rate": 0.6666666666666666,
+        "rows": 3,
+        "upper": 0.9
+      },
+      {
+        "lower": 0.9,
+        "mean_probability": null,
+        "observed_rate": null,
+        "rows": 0,
+        "upper": 1.0
+      }
+    ],
+    "capacity": {
+      "active_hours": 38,
+      "alert_precision": 0.13473684210526315,
+      "alert_recall": 0.16842105263157894,
+      "alerts_reviewed": 950,
+      "capacity_per_hour": 25,
+      "case_recall": 0.5111111111111111,
+      "detected_cases": 69,
+      "detected_first_seen_cases": 19,
+      "false_escalations": 822,
+      "first_seen_case_recall": 0.4222222222222222,
+      "first_seen_test_cases": 45,
+      "laundering_value_per_active_hour": 73826.54631578947,
+      "recovered_laundering_value": 2805408.76,
+      "reviewed_per_active_hour": 25.0,
+      "test_cases": 135,
+      "true_positive_alerts": 128
+    },
+    "case_mapping": {
+      "matched_positive_fingerprints": 461,
+      "positive_rows": 760
+    },
+    "expected_calibration_error": 6.898269089102054e-05,
+    "f1": 0.1511627906976744,
+    "false_negatives": 656,
+    "false_positives": 512,
+    "full_split_scored": true,
+    "positive_rate": 0.0009979083316154428,
+    "positives": 760,
+    "pr_auc": 0.09007935579024015,
+    "precision": 0.16883116883116883,
+    "recall": 0.1368421052631579,
+    "roc_auc": 0.9541422344774879,
+    "rows": 761593,
+    "threshold": 0.09492731170067917,
+    "true_negatives": 760321,
+    "true_positives": 104
+  }
+}

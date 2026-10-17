@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "dataset_id": "ibm_aml_hi_small",
+  "model_selection": {
+    "primary": "lightgbm",
+    "rationale": "CPU-efficient gradient boosting for rare-event tabular data with native TreeSHAP support; logistic regression is the supervised baseline and Isolation Forest is a complementary anomaly signal."
+  },
+  "raw": {
+    "input": "data/raw/ibm_aml_hi_small/HI-Small_Trans.csv",
+    "pattern_memberships": "data/interim/amlworld_pattern_memberships.parquet",
+    "chunk_size": 100000,
+    "feature_contract": "raw-baseline-v1",
+    "hash_buckets": 4096,
+    "categorical_encoding": "stable_hash_bucket_index"
+  },
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "minimum_positives": {
+    "train": 50,
+    "validation": 50,
+    "test": 50
+  },
+  "sampling": {
+    "negative_to_positive_ratio": 100,
+    "seed": 20261010,
+    "inverse_probability_weighting": true
+  },
+  "feature_columns": [
+    "amount",
+    "amount_received",
+    "signed_log_amount",
+    "signed_log_amount_received",
+    "amount_absolute_difference",
+    "amount_paid_to_received_ratio",
+    "amount_missing",
+    "amount_received_missing",
+    "same_bank",
+    "same_account",
+    "currency_mismatch",
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos",
+    "is_weekend",
+    "source_bank_hash",
+    "destination_bank_hash",
+    "source_account_hash",
+    "destination_account_hash",
+    "receiving_currency_hash",
+    "payment_currency_hash",
+    "payment_format_hash"
+  ],
+  "categorical_features": [
+    "source_bank_hash",
+    "destination_bank_hash",
+    "source_account_hash",
+    "destination_account_hash",
+    "receiving_currency_hash",
+    "payment_currency_hash",
+    "payment_format_hash"
+  ],
+  "lightgbm": {
+    "objective": "binary",
+    "metric": [
+      "average_precision",
+      "auc"
+    ],
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_data_in_leaf": 200,
+    "feature_fraction": 0.8,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "max_bin": 63,
+    "lambda_l1": 0.0,
+    "lambda_l2": 1.0,
+    "num_boost_round": 2000,
+    "early_stopping_rounds": 100,
+    "num_threads": 4,
+    "deterministic": true,
+    "force_row_wise": true,
+    "seed": 20261010,
+    "log_evaluation_period": 0
+  },
+  "calibration": {
+    "method": "platt",
+    "fit_split": "validation"
+  },
+  "logistic_baseline": {
+    "enabled": true,
+    "class_weight": "balanced"
+  },
+  "isolation_forest": {
+    "enabled": true,
+    "number_of_estimators": 200,
+    "maximum_samples": 8192,
+    "jobs": 4,
+    "seed": 20261010
+  },
+  "xgboost_crosscheck": {
+    "enabled": false,
+    "parameters": {
+      "num_boost_round": 1000,
+      "early_stopping_rounds": 75,
+      "max_depth": 6,
+      "eta": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "nthread": 4,
+      "seed": 20261010
+    }
+  },
+  "evaluation": {
+    "capacity_per_hour": 25,
+    "threshold_metric": "f1",
+    "calibration_bins": 10,
+    "report_first_seen_cases": true
+  },
+  "output": {
+    "directory": "artifacts/models/sprint2-lightgbm"
+  }
+}

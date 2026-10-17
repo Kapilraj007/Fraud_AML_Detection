@@ -1,0 +1,66 @@
+{
+  "artifact_kind": "capacity-aware-aml-model-bundle",
+  "bundle_id": "sprint2-lightgbm-v1",
+  "created_at_utc": "2026-10-13T13:24:16.809473+00:00",
+  "feature_schema_version": 1,
+  "files": {
+    "anomaly_signal": {
+      "bytes": 11059788,
+      "path": "isolation_forest.joblib",
+      "serialization": "trusted-local-joblib",
+      "sha256": "25991ff64396e23f79e067abddf1112df331853b35e968a9ecc85c2d611d4dce"
+    },
+    "calibration": {
+      "bytes": 161,
+      "path": "calibration.json",
+      "serialization": "json",
+      "sha256": "16d0554a8462ab0d0776c775628a0080088714637b98fa12d08b2b14393ba044"
+    },
+    "configuration": {
+      "bytes": 4698,
+      "path": "configuration.json",
+      "serialization": "json",
+      "sha256": "5ad8a902ffa2e4ee4df5b9131765e32e1b892951a841b30130df843429430190"
+    },
+    "feature_schema": {
+      "bytes": 1520,
+      "path": "feature_schema.json",
+      "serialization": "json",
+      "sha256": "43cbfda58952181b457adb96d5a896b145e6947c6fdce9db502f43af1784e8e4"
+    },
+    "logistic_baseline": {
+      "bytes": 1303,
+      "path": "logistic_baseline.json",
+      "serialization": "json",
+      "sha256": "9a7e7a8fb48df45a262b7aba0c37b40e745e097e49d3877ecdcd3b2fb58b945e"
+    },
+    "metrics": {
+      "bytes": 6911,
+      "path": "metrics.json",
+      "serialization": "json",
+      "sha256": "deffbdb3b925405c7cec90f71f331e27372faa6e49c44d700db6fab6d2f06bbc"
+    },
+    "primary_model": {
+      "bytes": 366731,
+      "path": "model.txt",
+      "serialization": "lightgbm-native-text",
+      "sha256": "d959bab0ac3cbede35a276844b6bf610baa54b38c4aae23e425cc7b3e1d94c59"
+    },
+    "training": {
+      "bytes": 2651,
+      "path": "training.json",
+      "serialization": "json",
+      "sha256": "0510a35adc09c88f429e8b86a84cdc84e79a3507a04c4aed8e8d6ed576282b8c"
+    }
+  },
+  "library_versions": {
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "python": "3.14.6",
+    "scikit-learn": "1.9.1"
+  },
+  "primary_model": "lightgbm",
+  "primary_serialization": "native-text",
+  "schema_version": 1
+}

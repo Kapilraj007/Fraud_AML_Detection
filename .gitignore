@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+
+# Frontend dependencies and generated output
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.tmp/
+.vite-cache/
+
+# Notebook and editor state
+.ipynb_checkpoints/
+.idea/
+.vscode/
+
+# Dataset and generated artifacts
+data/raw/**
+data/interim/**
+data/feature_store/**
+data/splits/**
+data/processed/**
+docs/eda/**
+monitoring/output/**
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/feature_store/.gitkeep
+!data/splits/.gitkeep
+!data/processed/.gitkeep
+!docs/eda/.gitkeep
+!monitoring/output/.gitkeep
+
+# Local credentials and transient downloads
+.env
+*.sqlite
+*.sqlite3
+*.db
+*.part
+kaggle.json
+
+# OS files
+.DS_Store
+Thumbs.db

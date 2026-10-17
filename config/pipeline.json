@@ -1,0 +1,26 @@
+{
+  "dataset": "amlworld_hi_small",
+  "chunk_size": 100000,
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "feature_windows_seconds": {
+    "velocity_1h": 3600,
+    "velocity_24h": 86400,
+    "velocity_7d": 604800,
+    "account_average_30d": 2592000,
+    "aml_chain": 21600
+  },
+  "queue": {
+    "capacity_per_hour": 25,
+    "study_seed": 20261007,
+    "conditions": [
+      "data_only",
+      "score_only",
+      "generic_explanation",
+      "reliability_gated_case_context"
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-09T12:05:35+00:00",
+  "input": "D:\\Projects\\Finance-2\\data\\processed\\runs\\dev-100000\\feature_store",
+  "input_manifest": {
+    "created_at": "2026-10-09T12:03:31.965157+00:00",
+    "dataset_id": "ibm_aml_hi_small",
+    "features": {
+      "causal": true,
+      "feature_columns": [
+        "amount",
+        "amount_missing",
+        "source_account_missing",
+        "destination_account_missing",
+        "transaction_type_missing",
+        "time_missing",
+        "relative_hour_sin",
+        "relative_hour_cos",
+        "relative_day_of_week_sin",
+        "relative_day_of_week_cos",
+        "source_txn_count_1h",
+        "source_txn_sum_1h",
+        "source_txn_count_24h",
+        "source_txn_sum_24h",
+        "source_txn_count_7d",
+        "source_txn_sum_7d",
+        "source_amount_mean_30d",
+        "amount_to_source_mean_30d_ratio",
+        "is_new_counterparty",
+        "new_device_flag",
+        "source_unique_counterparties_30d",
+        "source_recent_inbound_count",
+        "source_recent_inbound_sum",
+        "destination_recent_inbound_count",
+        "destination_recent_inbound_sum",
+        "source_fan_out_24h",
+        "destination_fan_in_24h",
+        "rapid_pass_through_ratio",
+        "causal_chain_depth",
+        "paysim_prior_transfer_in_count_24h",
+        "paysim_prior_transfer_in_sum_24h",
+        "paysim_transfer_to_cashout_flag",
+        "paysim_transfer_to_cashout_amount_ratio"
+      ],
+      "ground_truth_metadata_columns": [
+        "label",
+        "laundering_case_ids",
+        "laundering_typologies",
+        "laundering_case_positions",
+        "pattern_matched"
+      ],
+      "transform": "backend.app.ml.transform_features.transform_features"
+    },
+    "ordering": {
+      "external_date_bucketing": true,
+      "keys": [
+        "event_time",
+        "source_row_number"
+      ],
+      "max_rows_semantics": "earliest rows after global chronological order",
+      "stable": true
+    },
+    "output": {
+      "maximum_event_time": "2022-09-01T00:09:00+00:00",
+      "minimum_event_time": "2022-09-01T00:00:00+00:00",
+      "parquet_files": 1,
+      "partitions": 1,
+      "rows": 100000
+    },
+    "parameters": {
+      "chunk_size": 100000,
+      "max_rows": 100000
+    },
+    "patterns": {
+      "case_count": 370,
+      "complete_source_match_required": false,
+      "matched_unique_transactions": 3,
+      "membership_count": 3209,
+      "unique_pattern_transactions": 3209
+    },
+    "schema_version": 1,
+    "source": {
+      "maximum_event_time": "2022-09-18T16:18:00+00:00",
+      "minimum_event_time": "2022-09-01T00:00:00+00:00",
+      "pattern_file": "D:\\Projects\\Finance-2\\data\\raw\\ibm_aml_hi_small\\HI-Small_Patterns.txt",
+      "physical_rows_scanned": 5078345,
+      "sha256": {
+        "HI-Small_Patterns.txt": "2c546b5ce6009e73851f0139af053cf845f08bf92f3bc82fe1eb937dec2ef39b",
+        "HI-Small_Trans.csv": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040"
+      },
+      "transaction_file": "D:\\Projects\\Finance-2\\data\\raw\\ibm_aml_hi_small\\HI-Small_Trans.csv"
+    }
+  },
+  "profile_scope": {
+    "rows": 100000,
+    "batches": 1,
+    "batch_size": 100000,
+    "max_rows": null,
+    "is_bounded_sample": false
+  },
+  "resolved_fields": {
+    "timestamp": "event_time",
+    "amount": "amount",
+    "label": "label",
+    "type": "transaction_type",
+    "currency": "currency",
+    "receiving_currency": null,
+    "source_bank": null,
+    "destination_bank": null,
+    "source": "source_account",
+    "destination": "destination_account"
+  },
+  "time": {
+    "minimum_utc": "2022-09-01T00:00:00+00:00",
+    "maximum_utc": "2022-09-01T00:09:00+00:00",
+    "input_order_regressions": 0
+  },
+  "class_balance": {
+    "counts": {
+      "0": 99993,
+      "1": 7
+    },
+    "positive_count": 7,
+    "positive_rate": 7e-05
+  },
+  "amount": {
+    "parse_failures": 0,
+    "negative_count": 0,
+    "zero_count": 0,
+    "sample_size_for_quantiles": 50000,
+    "sample_quantiles": {
+      "p00": 1e-06,
+      "p25": 22.3875,
+      "p50": 2433.045,
+      "p75": 42474.0775,
+      "p90": 536712.4279999988,
+      "p99": 37418025.56580066,
+      "p100": 30893133697.47
+    }
+  },
+  "entities": {
+    "source_distinct_hash64": 88161,
+    "destination_distinct_hash64": 88770,
+    "note": "Counts use distinct deterministic 64-bit pandas hashes to bound memory."
+  },
+  "pattern_ground_truth": {
+    "available": true,
+    "path": "D:\\Projects\\Finance-2\\data\\raw\\ibm_aml_hi_small\\HI-Small_Patterns.txt",
+    "nonblank_lines": 3949,
+    "case_count": 370,
+    "transaction_annotations": 3209,
+    "typology_count": 8,
+    "malformed_or_orphan_lines": 0
+  },
+  "quality": {
+    "timestamp_parse_failures": 0,
+    "input_order_timestamp_regressions": 0,
+    "amount_parse_failures": 0,
+    "negative_amounts": 0,
+    "non_binary_labels": 0,
+    "missing_source_entities": 0,
+    "missing_destination_entities": 0
+  },
+  "interpretation_guardrails": [
+    "AMLworld is synthetic; prevalence is not a production base-rate estimate.",
+    "Pattern typology and label fields are evaluation-only and must not enter predictors.",
+    "Timestamp regressions in the raw file require chronological sorting before causal features.",
+    "A max-row run is a development sample, not the final descriptive analysis."
+  ]
+}
